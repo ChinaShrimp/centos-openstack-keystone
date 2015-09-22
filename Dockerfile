@@ -7,10 +7,17 @@ RUN set -x \
     && yum install -y openstack-selinux \
     && yum install -y openstack-keystone httpd mod_wsgi python-openstackclient memcached python-memcached
 
+# start memcached service
+RUN set -x \
+    && systemctl enable memcached.service
+    && systemctl start memcached.service
+
 VOLUME /etc/keystone
 EXPOSE 5000 35357
 # copy sql script
 COPY keystone.sql /root/keystone.sql
+# copy keystone config file
+COPY keystone.conf /etc/keystone/keystone.conf
 
 # add bootstrap script and make it executable
 COPY bootstrap.sh /etc/bootstrap.sh
