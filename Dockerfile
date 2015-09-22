@@ -5,6 +5,7 @@ RUN set -x \
     && yum install -y http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm \
     && yum install -y http://rdo.fedorapeople.org/openstack-kilo/rdo-release-kilo.rpm \
     && yum install -y openstack-selinux \
+    && yum install -y mariadb MySQL-python \
     && yum install -y openstack-keystone httpd mod_wsgi python-openstackclient memcached python-memcached
 
 # start memcached service
