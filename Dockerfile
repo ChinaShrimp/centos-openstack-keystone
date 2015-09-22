@@ -9,8 +9,7 @@ RUN set -x \
 
 # start memcached service
 RUN set -x \
-    && systemctl enable memcached.service \
-    && systemctl start memcached.service
+    && systemctl enable memcached.service
 
 VOLUME /etc/keystone
 EXPOSE 5000 35357
