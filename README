@@ -1,0 +1,5 @@
+Basic idea is:
+1. run all OpenStack services in docker containers
+2. migrate to CoreOS platform
+
+This is for OpenStack KeyStone project.
